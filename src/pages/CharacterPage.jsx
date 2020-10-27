@@ -1,5 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { useState } from 'react';
+import CharacterList from '../components/app/characters/CharacterList';
 
 const CharacterPage = () => {
   const [page, setPage] = useState(1);

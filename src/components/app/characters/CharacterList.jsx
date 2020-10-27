@@ -15,7 +15,6 @@ const CharacterList = () => {
         <CharacterItem
           name={character.name}
           image={character.image}
-          description={character.description}
         />
       </Link>
     </li>
@@ -30,8 +29,7 @@ const CharacterList = () => {
 
 CharacterList.propTypes = {
   name: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
+  image: PropTypes.string.isRequired
 }
 
 export default CharacterList;
