@@ -3,8 +3,7 @@ import { render, cleanup } from '@testing-library/react';
 import CharacterDetail from './CharacterDetail';
 
 describe('CharacterDetail component', () => {
-  afterEach(() => cleanup());
-  it('renders CharacterDetail', () => {
+  it('renders CharacterDetail after loading...', () => {
     const { asFragment } = render(<CharacterDetail
       name="Absalom"
       gender="Male"

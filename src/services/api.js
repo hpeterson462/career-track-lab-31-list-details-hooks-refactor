@@ -1,11 +1,11 @@
 export const getApi = () => {
   return fetch('https://xfiles-api.herokuapp.com/api/v1/characters')
     .then(res => res.json())
-    .then(json => json.docs);
+    .then(json => json.results);
 };
 
-export const getApiById = (characterId) => {
-  return fetch(`https://xfiles-api.herokuapp.com/api/v1/characters/${characterId}`)
+export const getApiByName = (name) => {
+  return fetch(`https://xfiles-api.herokuapp.com/api/v1/characters/${name}`)
     .then(res => res.json())
-    .then(json => json.docs);
+    .then(json => json.results);
 };

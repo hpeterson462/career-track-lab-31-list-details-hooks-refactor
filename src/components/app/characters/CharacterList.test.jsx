@@ -1,16 +1,15 @@
 import React from 'react';
-import { render, cleanup, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import CharacterList from './CharacterList';
 import { getApi } from '../../../services/api';
+import { MemoryRouter } from 'react-router-dom';
 
 jest.mock('../../../services/api.js');
 
 describe('CharacterList component', () => {
-  afterEach(() => cleanup());
   it('renders CharacterList after loading...', async () => {
     getApi.mockResolvedValue([
       {
-        id: 1,
         name: 'Absalom',
         gender: 'Male',
         occupation: 'Cult Leader',
@@ -19,11 +18,11 @@ describe('CharacterList component', () => {
       }
     ]);
 
-    render(<CharacterList />);
+    render(<MemoryRouter><CharacterList /></MemoryRouter>);
 
-    screen.getByTest('Loading...');
+    screen.getByText('Loading...');
 
-    const characterList = await screen.findById('characterList');
+    const characterList = await screen.findByTestId('characters');
 
     return waitFor(() => {
       expect(characterList).not.toBeEmptyDOMElement();
