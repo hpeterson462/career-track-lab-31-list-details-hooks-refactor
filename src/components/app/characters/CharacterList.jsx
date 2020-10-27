@@ -4,8 +4,8 @@ import { useCharacters } from '../../../hooks/character';
 import CharacterItem from './CharacterItem';
 import { Link } from 'react-router-dom';
 
-const CharacterList = () => {
-  const { loading, characters } = useCharacters();
+const CharacterList = ({ page }) => {
+  const { loading, characters } = useCharacters(page);
   if (loading)
     return <h1>Loading...</h1>;
 

@@ -9,7 +9,7 @@ const CharacterPage = () => {
     <>
       <button
         onClick={() => setPage(page => page - 1)}
-        disable={page <= 1}
+        disabled={page <= 1}
       >
         &lt;
       </button>
