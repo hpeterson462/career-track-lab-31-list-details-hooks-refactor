@@ -13,10 +13,10 @@ exports[`CharacterDetail component renders CharacterDetail 1`] = `
       OccupationCult Leader
     </p>
     <p>
-      Imagehttps://vignette.wikia.nocookie.net/x-files/images/3/31/Absalom.jpg/revision/latest/scale-to-width-down/310?cb=20070708201919
+      Imagewww.x-files-image.com
     </p>
     <p>
-      DescriptionAbsalom was the leader of a cult...
+      DescriptionCult Lader
     </p>
   </section>
 </DocumentFragment>

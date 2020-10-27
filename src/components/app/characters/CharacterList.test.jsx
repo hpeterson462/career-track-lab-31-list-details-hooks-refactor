@@ -1,17 +1,32 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
-import CharacterDetail from './CharacterDetail';
+import { render, cleanup, waitFor } from '@testing-library/react';
+import CharacterList from './CharacterList';
+import { getApi } from '../../../services/api';
 
-describe('CharacterDetail component', () => {
+jest.mock('../../../services/api.js');
+
+describe('CharacterList component', () => {
   afterEach(() => cleanup());
-  it('renders CharacterDetail', () => {
-    const { asFragment } = render(<CharacterDetail
-      name="Absalom"
-      gender="Male"
-      occupation="Cult Leader"
-      image="https://vignette.wikia.nocookie.net/x-files/images/3/31/Absalom.jpg/revision/latest/scale-to-width-down/310?cb=20070708201919"
-      description="Absalom was the leader of a cult..."
-    />);
-    expect(asFragment()).toMatchSnapshot();
+  it('renders CharacterList after loading...', async () => {
+    getApi.mockResolvedValue([
+      {
+        id: 1,
+        name: 'Absalom',
+        gender: 'Male',
+        occupation: 'Cult Leader',
+        image: 'www.x-files-image.com',
+        description: 'Cult Leader'
+      }
+    ]);
+
+    render(<CharacterList />);
+
+    screen.getByTest('Loading...');
+
+    const characterList = await screen.findById('characterList');
+
+    return waitFor(() => {
+      expect(characterList).not.toBeEmptyDOMElement();
+    });
   });
 });
