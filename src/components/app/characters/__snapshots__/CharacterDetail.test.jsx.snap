@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterDetail component renders CharacterDetail after loading... 1`] = `
+<DocumentFragment>
+  <section>
+    <p>
+      NameAbsalom
+    </p>
+    <p>
+      GenderMale
+    </p>
+    <p>
+      OccupationCult Leader
+    </p>
+    <p>
+      Imagewww.x-files-image.com
+    </p>
+    <p>
+      DescriptionCult Lader
+    </p>
+  </section>
+</DocumentFragment>
+`;
